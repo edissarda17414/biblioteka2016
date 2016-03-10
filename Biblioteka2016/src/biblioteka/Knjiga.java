@@ -10,6 +10,38 @@ public class Knjiga {
 	private String izdavac;
 	private int izdanje;
 
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (isbn ^ (isbn >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Knjiga other = (Knjiga) obj;
+		if (isbn != other.isbn)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Knjiga [naslov=" + naslov + ", isbn=" + isbn + ", autori=" + autori + ", izdavac=" + izdavac
+				+ ", izdanje=" + izdanje + "]";
+	}
+
+	
+	
+	
 	public String getNaslov() {
 		return naslov;
 	}
