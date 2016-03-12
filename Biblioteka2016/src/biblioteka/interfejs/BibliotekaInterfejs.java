@@ -12,6 +12,4 @@ public interface BibliotekaInterfejs {
 	public LinkedList<Knjiga> vratiSveKnjige();
 	public LinkedList<Knjiga> pronadjiKnjigu(Autor autor, long isbn, String naslov, String izdavac);
 	
-	
-
 }
