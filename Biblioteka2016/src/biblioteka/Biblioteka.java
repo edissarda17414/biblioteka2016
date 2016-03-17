@@ -4,12 +4,14 @@ import java.util.LinkedList;
 import biblioteka.interfejs.BibliotekaInterfejs;
 
 public class Biblioteka implements BibliotekaInterfejs {
-
+	
+	// Ovo je lista svih knjiga u biblioteci
 	private LinkedList<Knjiga> knjige = new LinkedList<>();
 	
 	
 	@Override
 	public void dodajKnjigu(Knjiga knjiga) {
+		//ne smeju se dodavati null knjige
 		if (knjiga == null || knjige.contains(knjiga))
 			throw new RuntimeException("Greska pri unosu knjige.");
 		
